@@ -62,7 +62,13 @@ public class UserControllerTests {
 
 
     }
-
+    /**
+    *@Author : landy
+    *@description : 
+    *@Date:17:40 2018/7/30
+    *@User:lan
+    *@Param: * @param null
+    */
     @Test
     public void test03() throws Exception{
         this.mvc.perform(post("/findpost").accept(MediaType.APPLICATION_JSON_UTF8))
