@@ -1,13 +1,10 @@
 package com.hsbc.executing.demo.controller;
 
 import com.hsbc.executing.demo.entity.User;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Queue;
 
 /**
  * @version :
@@ -20,7 +17,7 @@ import java.util.Queue;
 public class UserController {
     /**
     *@Author : landy
-    *@description : 测试返回user的json对象
+    *@description : 测试GET请求返回user的json对象
     *@Date:11:12 2018/7/30
     *@User:lan
     *@Param: * @param null
@@ -35,7 +32,7 @@ public class UserController {
     }
     /**
     *@Author : landy
-    *@description : 测试传入参数返回user的json对象
+    *@description : 测试GET请求传入参数返回user的json对象
     *@Date:11:13 2018/7/30
     *@User:lan
     *@Param: * @param null
@@ -45,5 +42,37 @@ public class UserController {
         User user = new User(name,age);
         return user;
     }
-
+    /**
+    *@Author : landy
+    *@description : 测试POST请求并传入一个user对象
+    *@Date:17:07 2018/7/30
+    *@User:lan
+    *@Param: * @param null
+    */
+   @PostMapping(path = "/findpath")
+    public String postFindUser(@RequestBody User user){
+        return user.toString();
+    }
+    /**
+     *@Author : landy
+     *@description : 测试PUT请求并传入一个user对象
+     *@Date:17:07 2018/7/30
+     *@User:lan
+     *@Param: * @param null
+     */
+    @PutMapping(path = "/findput")
+    public User putFindUser(@RequestBody User user){
+        return user;
+    }
+    /**
+     *@Author : landy
+     *@description : 测试DELETE请求并传入一个user对象
+     *@Date:17:07 2018/7/30
+     *@User:lan
+     *@Param: * @param null
+     */
+    @DeleteMapping(path = "/finddelete")
+    public User deleteFindUser(@RequestBody User user){
+        return user;
+    }
 }
