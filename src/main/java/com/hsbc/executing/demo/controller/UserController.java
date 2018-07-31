@@ -50,8 +50,8 @@ public class UserController {
     *@Param: * @param null
     */
    @PostMapping(path = "/findpath")
-    public String postFindUser(@RequestBody User user){
-        return user.toString();
+    public void postFindUser(@RequestBody User user){
+       System.out.println(user.toString());
     }
     /**
      *@Author : landy

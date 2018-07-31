@@ -1,6 +1,8 @@
 package com.hsbc.executing.demo;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hsbc.executing.demo.controller.UserController;
+import com.hsbc.executing.demo.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -32,6 +34,7 @@ public class UserControllerTests {
 
     @Autowired
     private MockMvc mvc;
+
     /**
     *@Author : landy
     *@description : 测试路径为hello的方法
@@ -65,8 +68,12 @@ public class UserControllerTests {
 
     @Test
     public void test03() throws Exception{
-        this.mvc.perform(post("/findpost").accept(MediaType.APPLICATION_JSON_UTF8))
-
+        User user = new User();
+        user.setName("lan");
+        user.setAge(20);
+        ObjectMapper mapper = new ObjectMapper();
+        this.mvc.perform(post("/findpath").contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content(mapper.writeValueAsString(user)))
                 .andExpect(status().isOk())
                 .andDo(print());
 
