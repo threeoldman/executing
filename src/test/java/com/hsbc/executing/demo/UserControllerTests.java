@@ -65,7 +65,13 @@ public class UserControllerTests {
 
 
     }
-
+    /**
+    *@Author : landy
+    *@description : 
+    *@Date:11:35 2018/7/31
+    *@User:lan
+    *@Param: * @param null
+    */
     @Test
     public void test03() throws Exception{
         User user = new User();
