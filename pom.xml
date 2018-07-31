@@ -43,11 +43,29 @@
         </dependency>
     </dependencies>
 
+    <scm>
+        <url>https://github.com/threeoldman/executing</url>
+        <connection>scm:git:https://github.com/threeoldman/executing.git</connection>
+        <developerConnection>scm:git:https://github.com/threeoldman/executing.git</developerConnection>
+        <tag>HEAD</tag>
+
+    </scm>
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>1.9.5</version>
+                <configuration>
+                    <connectionType>developerConnection</connectionType>
+                    <username>threeoldman</username>
+                    <password>yucong.7541</password>
+                </configuration>
             </plugin>
         </plugins>
     </build>
